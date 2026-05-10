@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Prediction Result</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 700px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #0f172a;
+        }
+
+        .result-box {
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 15px;
+            background: #eff6ff;
+            border-left: 8px solid #2563eb;
+        }
+
+        .result-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .probability {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #334155;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            background: #2563eb;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #1d4ed8;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧫 ESBL Prediction Result</h1>
+
+    <div class="result-box">
+
+        <div class="result-text">
+            {{ result }}
+        </div>
+
+        <div class="probability">
+            <p>
+                <b>Phase 1 Probability:</b>
+                {{ phase1_prob }}
+            </p>
+
+            {% if phase2_prob %}
+            <p>
+                <b>Phase 2 Probability:</b>
+                {{ phase2_prob }}
+            </p>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <a class="back-btn" href="/">
+        🔄 Run Another Prediction
+    </a>
+
+</div>
+
+</body>
+</html>
